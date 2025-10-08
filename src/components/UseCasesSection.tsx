@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiShoppingBag, FiTrendingUp, FiGlobe, FiImage, FiAward, FiGamepad } from 'react-icons/fi';
+import { FiShoppingBag, FiTrendingUp, FiGlobe, FiImage, FiAward, FiCommand } from 'react-icons/fi';
 
 export default function UseCasesSection() {
   const useCases = [
@@ -38,7 +38,7 @@ export default function UseCasesSection() {
     {
       title: "Gaming & Metaverse",
       description: "Use BLAZE in gaming ecosystems and metaverse platforms. Trade in-game assets seamlessly across virtual worlds.",
-      icon: FiGamepad,
+      icon: FiCommand,
       gradient: "from-purple/20 to-pink/20"
     },
   ];
