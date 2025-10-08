@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import PriceTicker from '@/components/PriceTicker';
 import TeamSection from '@/components/TeamSection';
@@ -7,6 +10,7 @@ import WhitepaperSection from '@/components/WhitepaperSection';
 import TokenomicsSection from '@/components/TokenomicsSection';
 import RoadmapSection from '@/components/RoadmapSection';
 import WalletDemo from '@/components/WalletDemo';
+import { FiZap, FiShield, FiTrendingUp, FiUsers, FiLink, FiLayers } from 'react-icons/fi';
 
 export default function Home() {
   return (
@@ -89,41 +93,62 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group">
-                <div className="text-7xl mb-6">⚡</div>
-                <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">Lightning Fast</h3>
-                <p className="text-gray-400 text-lg leading-relaxed">Transactions in milliseconds, not minutes. Experience instant crypto transfers.</p>
-              </div>
-
-              <div className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group">
-                <div className="text-7xl mb-6">🔒</div>
-                <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">Bank-Grade Security</h3>
-                <p className="text-gray-400 text-lg leading-relaxed">Your keys, your crypto. Always. Non-custodial wallet with military-grade encryption.</p>
-              </div>
-
-              <div className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group">
-                <div className="text-7xl mb-6">💰</div>
-                <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">Cashback Rewards</h3>
-                <p className="text-gray-400 text-lg leading-relaxed">Earn 2-5% BLAZE tokens on every transaction you make.</p>
-              </div>
-
-              <div className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group">
-                <div className="text-7xl mb-6">🗳️</div>
-                <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">Governance</h3>
-                <p className="text-gray-400 text-lg leading-relaxed">Vote on protocol changes and earn rewards for participating.</p>
-              </div>
-
-              <div className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group">
-                <div className="text-7xl mb-6">🔗</div>
-                <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">Multi-Chain</h3>
-                <p className="text-gray-400 text-lg leading-relaxed">Support for 8+ major blockchains in one unified interface.</p>
-              </div>
-
-              <div className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group">
-                <div className="text-7xl mb-6">✨</div>
-                <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">Beautiful UI</h3>
-                <p className="text-gray-400 text-lg leading-relaxed">Stunning design that makes crypto accessible and fun.</p>
-              </div>
+              {[
+                {
+                  icon: FiZap,
+                  title: 'Lightning Fast',
+                  description: 'Transactions in milliseconds, not minutes. Experience instant crypto transfers with optimized gas fees.',
+                  delay: 0
+                },
+                {
+                  icon: FiShield,
+                  title: 'Bank-Grade Security',
+                  description: 'Your keys, your crypto. Always. Non-custodial wallet with military-grade encryption and biometric authentication.',
+                  delay: 0.1
+                },
+                {
+                  icon: FiTrendingUp,
+                  title: 'Cashback Rewards',
+                  description: 'Earn 2-5% BLAZE tokens on every transaction. Automatic rewards distribution to your wallet.',
+                  delay: 0.2
+                },
+                {
+                  icon: FiUsers,
+                  title: 'DAO Governance',
+                  description: 'Vote on protocol changes and earn rewards for participating in ecosystem decisions.',
+                  delay: 0.3
+                },
+                {
+                  icon: FiLink,
+                  title: 'Multi-Chain Support',
+                  description: 'Support for 8+ major blockchains including Ethereum, BSC, Polygon, Avalanche, and more.',
+                  delay: 0.4
+                },
+                {
+                  icon: FiLayers,
+                  title: 'Advanced Features',
+                  description: 'Built-in DEX aggregator, NFT marketplace, staking, and portfolio analytics in one interface.',
+                  delay: 0.5
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: feature.delay, duration: 0.5 }}
+                  className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group relative overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-pink-purple opacity-10 blur-3xl rounded-full group-hover:opacity-20 transition-opacity"></div>
+                  <div className="relative">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-pink-purple flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                      <feature.icon className="text-3xl text-white" />
+                    </div>
+                    <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">{feature.title}</h3>
+                    <p className="text-gray-400 text-lg leading-relaxed">{feature.description}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
