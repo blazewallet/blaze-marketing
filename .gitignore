@@ -40,10 +40,8 @@ next-env.d.ts
 
 # temporary reconstruction files
 reconstructed/
-*.html
-*.json
-*.py
-*.txt
+index-real.html
+html-sample.txt
 download_deployment.py
 extract_nextjs.py
 reconstruct_project.py
@@ -57,3 +55,4 @@ assets_to_download.txt
 source.tar.gz
 test-file.txt
 test-file2.txt
+index.html
