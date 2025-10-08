@@ -247,9 +247,48 @@ export default function WalletDemo() {
             <p className="text-gray-400 text-lg mb-6">
               This is just a preview. Experience the full wallet in action:
             </p>
-            <button className="px-12 py-5 bg-gradient-pink-purple hover:opacity-90 rounded-xl font-bold text-xl transition-all transform hover:scale-105 glow-effect">
-              Launch Live Demo
-            </button>
+            <a 
+              href="https://my.blazewallet.io" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block px-12 py-5 bg-gradient-pink-purple hover:opacity-90 rounded-xl font-bold text-xl transition-all transform hover:scale-105 glow-effect"
+            >
+              Launch Live Wallet
+            </a>
+          </motion.div>
+
+          {/* Embedded Wallet iFrame */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 rounded-3xl overflow-hidden border-2 border-pink/30 shadow-2xl shadow-pink/20"
+          >
+            <div className="bg-navy-dark p-4 border-b border-pink/20 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <span className="text-gray-400 text-sm font-mono">my.blazewallet.io</span>
+              </div>
+              <a 
+                href="https://my.blazewallet.io" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-pink text-sm font-semibold transition-colors"
+              >
+                Open in New Tab →
+              </a>
+            </div>
+            <iframe
+              src="https://my.blazewallet.io"
+              className="w-full h-[600px] md:h-[800px] bg-navy"
+              title="BLAZE Wallet Demo"
+              sandbox="allow-scripts allow-same-origin allow-forms"
+            />
           </motion.div>
         </motion.div>
       </div>
