@@ -6,6 +6,7 @@ import UseCasesSection from '@/components/UseCasesSection';
 import WhitepaperSection from '@/components/WhitepaperSection';
 import TokenomicsSection from '@/components/TokenomicsSection';
 import RoadmapSection from '@/components/RoadmapSection';
+import WalletDemo from '@/components/WalletDemo';
 
 export default function Home() {
   return (
@@ -127,6 +128,7 @@ export default function Home() {
           </div>
         </section>
 
+        <WalletDemo />
         <TeamSection />
         <ComparisonTable />
         <TokenomicsSection />
