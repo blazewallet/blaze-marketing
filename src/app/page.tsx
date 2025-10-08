@@ -5,6 +5,7 @@ import ComparisonTable from '@/components/ComparisonTable';
 import UseCasesSection from '@/components/UseCasesSection';
 import WhitepaperSection from '@/components/WhitepaperSection';
 import TokenomicsSection from '@/components/TokenomicsSection';
+import RoadmapSection from '@/components/RoadmapSection';
 
 export default function Home() {
   return (
@@ -12,102 +13,115 @@ export default function Home() {
       <PriceTicker />
       <Navigation />
       
-      <main className="pt-28">
+      <main className="pt-28 bg-navy">
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-black to-black"></div>
+          {/* Background gradient effects */}
+          <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy-dark to-navy"></div>
           <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/20 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-pink/10 rounded-full filter blur-[100px]"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-purple/10 rounded-full filter blur-[100px]"></div>
           </div>
           
-          <div className="container mx-auto text-center relative z-10">
-            <h1 className="text-7xl md:text-8xl font-bold mb-8 leading-tight">
-              <span className="gradient-text">Blaze</span>
-            </h1>
-            <p className="text-2xl md:text-3xl mb-8 text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              <span className="font-semibold text-white">Lightning-fast transactions</span>, built-in swapping, and{' '}
-              <span className="font-semibold text-white">cashback rewards</span> in one beautiful app.
+          <div className="container mx-auto text-center relative z-10 max-w-6xl">
+            {/* Main Logo/Title */}
+            <div className="mb-8 flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-pink-purple rounded-2xl blur-xl opacity-50"></div>
+                <div className="relative px-12 py-6 bg-gradient-pink-purple rounded-2xl">
+                  <h1 className="text-6xl md:text-7xl font-black text-white tracking-tight">
+                    BLAZE
+                  </h1>
+                </div>
+              </div>
+            </div>
+            
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+              Blaze <span className="gradient-text">Wallet</span>
+            </h2>
+            
+            <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Lightning-fast transactions, built-in swapping, and cashback rewards in one beautiful app.
             </p>
             
-            <div className="flex gap-4 justify-center mb-16">
-              <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg shadow-purple-500/50">
+            <div className="flex gap-4 justify-center mb-20">
+              <button className="px-10 py-4 bg-gradient-pink-purple hover:opacity-90 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-2xl shadow-pink/50 glow-effect">
                 Launch App
               </button>
-              <button className="px-8 py-4 border border-purple-500 hover:bg-purple-500/10 rounded-lg font-semibold text-lg transition-all">
+              <button className="px-10 py-4 border-2 border-pink/50 hover:bg-pink/10 rounded-xl font-bold text-lg transition-all backdrop-blur-sm">
                 Learn More
               </button>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <div className="card-gradient rounded-xl p-6">
-                <div className="text-4xl font-bold gradient-text mb-2">8+</div>
-                <div className="text-gray-400">Blockchains</div>
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              <div className="card-dark rounded-2xl p-8 hover:scale-105 transition-all">
+                <div className="text-5xl font-black gradient-text mb-2">8+</div>
+                <div className="text-gray-400 text-lg">Blockchains</div>
               </div>
-              <div className="card-gradient rounded-xl p-6">
-                <div className="text-4xl font-bold gradient-text mb-2">25%</div>
-                <div className="text-gray-400">Max APY</div>
+              <div className="card-dark rounded-2xl p-8 hover:scale-105 transition-all">
+                <div className="text-5xl font-black gradient-text mb-2">25%</div>
+                <div className="text-gray-400 text-lg">Max APY</div>
               </div>
-              <div className="card-gradient rounded-xl p-6">
-                <div className="text-4xl font-bold gradient-text mb-2">5%</div>
-                <div className="text-gray-400">Cashback</div>
+              <div className="card-dark rounded-2xl p-8 hover:scale-105 transition-all">
+                <div className="text-5xl font-black gradient-text mb-2">5%</div>
+                <div className="text-gray-400 text-lg">Cashback</div>
               </div>
-              <div className="card-gradient rounded-xl p-6">
-                <div className="text-4xl font-bold gradient-text mb-2">0.1s</div>
-                <div className="text-gray-400">Tx Speed</div>
+              <div className="card-dark rounded-2xl p-8 hover:scale-105 transition-all">
+                <div className="text-5xl font-black gradient-text mb-2">0.1s</div>
+                <div className="text-gray-400 text-lg">Tx Speed</div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Features Section */}
-        <section id="features" className="py-24 px-4 bg-gradient-to-b from-black to-purple-900/10">
-          <div className="container mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold mb-4">
-                Built for speed, security, and simplicity
+        {/* Why Join Section */}
+        <section className="py-32 px-4 relative">
+          <div className="container mx-auto max-w-7xl">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-bold mb-6">
+                Why <span className="gradient-text">Join?</span>
               </h2>
-              <p className="text-gray-400 text-lg">
-                Experience the future of crypto wallets
+              <p className="text-gray-400 text-xl max-w-3xl mx-auto">
+                Built for speed, security, and simplicity. Experience the future of crypto wallets.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="card-gradient rounded-2xl p-8 hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">⚡</div>
-                <h3 className="text-2xl font-bold mb-4">Lightning Fast</h3>
-                <p className="text-gray-400">Transactions in milliseconds, not minutes</p>
+              <div className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group">
+                <div className="text-7xl mb-6">⚡</div>
+                <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">Lightning Fast</h3>
+                <p className="text-gray-400 text-lg leading-relaxed">Transactions in milliseconds, not minutes. Experience instant crypto transfers.</p>
               </div>
 
-              <div className="card-gradient rounded-2xl p-8 hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">🔒</div>
-                <h3 className="text-2xl font-bold mb-4">Bank-Grade Security</h3>
-                <p className="text-gray-400">Your keys, your crypto. Always.</p>
+              <div className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group">
+                <div className="text-7xl mb-6">🔒</div>
+                <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">Bank-Grade Security</h3>
+                <p className="text-gray-400 text-lg leading-relaxed">Your keys, your crypto. Always. Non-custodial wallet with military-grade encryption.</p>
               </div>
 
-              <div className="card-gradient rounded-2xl p-8 hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">💰</div>
-                <h3 className="text-2xl font-bold mb-4">Cashback Rewards</h3>
-                <p className="text-gray-400">Earn BLAZE tokens on every transaction</p>
+              <div className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group">
+                <div className="text-7xl mb-6">💰</div>
+                <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">Cashback Rewards</h3>
+                <p className="text-gray-400 text-lg leading-relaxed">Earn 2-5% BLAZE tokens on every transaction you make.</p>
               </div>
 
-              <div className="card-gradient rounded-2xl p-8 hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">🗳️</div>
-                <h3 className="text-2xl font-bold mb-4">Governance</h3>
-                <p className="text-gray-400">Vote on protocol changes and earn rewards</p>
+              <div className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group">
+                <div className="text-7xl mb-6">🗳️</div>
+                <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">Governance</h3>
+                <p className="text-gray-400 text-lg leading-relaxed">Vote on protocol changes and earn rewards for participating.</p>
               </div>
 
-              <div className="card-gradient rounded-2xl p-8 hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">🔗</div>
-                <h3 className="text-2xl font-bold mb-4">Multi-Chain</h3>
-                <p className="text-gray-400">Support for 8+ major blockchains</p>
+              <div className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group">
+                <div className="text-7xl mb-6">🔗</div>
+                <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">Multi-Chain</h3>
+                <p className="text-gray-400 text-lg leading-relaxed">Support for 8+ major blockchains in one unified interface.</p>
               </div>
 
-              <div className="card-gradient rounded-2xl p-8 hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">✨</div>
-                <h3 className="text-2xl font-bold mb-4">Beautiful UI</h3>
-                <p className="text-gray-400">Stunning design that makes crypto fun</p>
+              <div className="card-dark rounded-3xl p-10 hover:scale-105 transition-all group">
+                <div className="text-7xl mb-6">✨</div>
+                <h3 className="text-3xl font-bold mb-4 group-hover:text-pink transition-colors">Beautiful UI</h3>
+                <p className="text-gray-400 text-lg leading-relaxed">Stunning design that makes crypto accessible and fun.</p>
               </div>
             </div>
           </div>
@@ -116,23 +130,28 @@ export default function Home() {
         <TeamSection />
         <ComparisonTable />
         <TokenomicsSection />
+        <RoadmapSection />
         <UseCasesSection />
         <WhitepaperSection />
 
         {/* Footer */}
-        <footer className="py-12 px-4 border-t border-white/10">
-          <div className="container mx-auto text-center text-gray-400">
-            <p>&copy; 2025 BLAZE Wallet. All rights reserved.</p>
-            <div className="flex gap-6 justify-center mt-4">
-              <a href="#" className="hover:text-white transition-colors">Twitter</a>
-              <a href="#" className="hover:text-white transition-colors">Discord</a>
-              <a href="#" className="hover:text-white transition-colors">Telegram</a>
-              <a href="#" className="hover:text-white transition-colors">GitHub</a>
+        <footer className="py-16 px-4 border-t border-pink/20">
+          <div className="container mx-auto text-center">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold gradient-text mb-4">BLAZE Wallet</h3>
+              <p className="text-gray-400 text-lg">The future of decentralized finance</p>
             </div>
+            <div className="flex gap-8 justify-center mb-8 flex-wrap">
+              <a href="#" className="text-gray-400 hover:text-pink transition-colors text-lg">Twitter</a>
+              <a href="#" className="text-gray-400 hover:text-pink transition-colors text-lg">Discord</a>
+              <a href="#" className="text-gray-400 hover:text-pink transition-colors text-lg">Telegram</a>
+              <a href="#" className="text-gray-400 hover:text-pink transition-colors text-lg">GitHub</a>
+              <a href="#" className="text-gray-400 hover:text-pink transition-colors text-lg">Medium</a>
+            </div>
+            <p className="text-gray-500">&copy; 2025 BLAZE Wallet. All rights reserved.</p>
           </div>
         </footer>
       </main>
     </>
   );
 }
-

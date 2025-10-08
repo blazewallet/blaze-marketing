@@ -23,33 +23,40 @@ export default function TeamSection() {
   ];
 
   return (
-    <section id="team" className="py-24 px-4">
-      <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-4">
+    <section id="team" className="py-32 px-4 bg-navy-dark relative">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
             Meet the <span className="gradient-text">Team</span>
           </h2>
+          <p className="text-gray-400 text-xl">
+            Built by experienced professionals from leading tech companies
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member, index) => (
-            <div key={index} className="card-gradient rounded-2xl p-6 hover:scale-105 transition-transform">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 mb-4 mx-auto"></div>
-              <h3 className="text-xl font-bold text-center mb-2">{member.name}</h3>
-              <p className="text-purple-400 text-center mb-4 font-semibold">{member.role}</p>
-              <p className="text-gray-400 text-sm text-center leading-relaxed">{member.description}</p>
+            <div key={index} className="card-dark rounded-3xl p-8 hover:scale-105 transition-all group text-center">
+              <div className="w-32 h-32 rounded-full bg-gradient-pink-purple mb-6 mx-auto flex items-center justify-center text-5xl font-black text-white">
+                {member.name.charAt(0)}
+              </div>
+              <h3 className="text-2xl font-bold mb-2 group-hover:text-pink transition-colors">{member.name}</h3>
+              <p className="text-pink font-bold mb-4 text-lg">{member.role}</p>
+              <p className="text-gray-400 leading-relaxed">{member.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <h3 className="text-2xl font-bold mb-4">Join Our Mission</h3>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+        <div className="text-center mt-20 p-12 card-gradient rounded-3xl max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold mb-4">Join Our Mission</h3>
+          <p className="text-gray-300 text-lg mb-8">
             We're always looking for talented individuals who share our vision of making crypto accessible to everyone.
           </p>
+          <button className="px-10 py-4 bg-gradient-pink-purple hover:opacity-90 rounded-xl font-bold text-lg transition-all transform hover:scale-105 glow-effect">
+            View Open Positions
+          </button>
         </div>
       </div>
     </section>
   );
 }
-
